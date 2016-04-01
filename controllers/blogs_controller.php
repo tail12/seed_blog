@@ -22,6 +22,10 @@
      *
      */
     class BlogsController{
+      // プロパティの登録
+      private $resource = '';
+      private $action = '';
+
       // URLがblogs/indexであった場合に呼ばれるメソッドで，
       // blogデータの全体を取得し，表示するため処理をするメソッドです．
       public function index(){
@@ -29,6 +33,12 @@
         // モデルを呼び出す
         $blog = new Blog();
         $blog->index();
+
+        // アクション名を設定
+        $this0->action = 'index';
+
+        // 共通レイアウトファイルを呼び出す
+        require('views/layout/application.php');
       }
     }
 
