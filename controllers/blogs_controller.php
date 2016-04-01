@@ -2,6 +2,9 @@
     // フレームワークのM．Cのファイルはクラス化する
     // 命名規則 → リソース名Controller
 
+    // 対応するモデルファイルをrequireする
+    require('models/blog.php');
+
     $controller = new BlogsController();
     // アクション名によって，呼び出すメソッドを変える
     switch ($action) {
@@ -22,7 +25,10 @@
       // URLがblogs/indexであった場合に呼ばれるメソッドで，
       // blogデータの全体を取得し，表示するため処理をするメソッドです．
       public function index(){
-        echo 'blogs_controller.phpのindex()メソッドが呼ばれた';
+        echo 'blogs_controller.phpのindex()メソッドが呼ばれた<br>';
+        // モデルを呼び出す
+        $blog = new Blog();
+        $blog->index();
       }
     }
 
