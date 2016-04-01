@@ -9,7 +9,7 @@
     ヘッダー<br>
     <!-- 各ページに必要なコードをURLを元にrequire -->
     <?php
-        include('views/blogs/', $this->action, '.php');
+        include('views/blogs/'. $this->action . '.php');
     ?>
     フッター<br>
   </body>
