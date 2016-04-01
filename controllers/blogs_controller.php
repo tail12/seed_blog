@@ -35,7 +35,7 @@
         $blog->index();
 
         // アクション名を設定
-        $this0->action = 'index';
+        $this->action = 'index';
 
         // 共通レイアウトファイルを呼び出す
         require('views/layout/application.php');
